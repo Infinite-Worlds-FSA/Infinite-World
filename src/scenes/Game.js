@@ -49,7 +49,13 @@ class Game extends Phaser.Scene {
     this.scene.start("Game", { levelKey: nextLevelKey });
   }
 
+  showScore() {
+    const scoreElement = document.querySelector('.score');
+    scoreElement.classList.remove('score-hidden');
+  }
+
   create() {
+    this.showScore();
     const noCollisionTiles = [tiles.EMPTY, tiles.FLAG_LEFT];
 
     this.map = this.make.tilemap({ key: this.levelKey });

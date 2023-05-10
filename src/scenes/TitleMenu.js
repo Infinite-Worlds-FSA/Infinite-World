@@ -7,8 +7,25 @@ class TitleMenu extends Phaser.Scene {
         this.load.image('start-button', 'src/assets/img/start-button.png')
     }
 
+    toggleScoreDisplay(visible){
+        const scoreElement = document.querySelector('.score');
+        if (visible) {
+            scoreElement.classList.remove('score-hidden');
+        } else {
+            scoreElement.classList.add('score-hidden');
+        }
+    }
+
     create() {
-        this.add.text(20, 20, 'Welcome to Infinite Worlds', { font: '25px Sans-serif', fill: 'black' });
+        this.toggleScoreDisplay(false);
+
+        const titleText = this.add.text(
+            this.cameras.main.width / 2,
+            this.cameras.main.height / 4,
+            'Welcome to Infinite Worlds',
+            { font: '25px Sans-serif', fill: 'black' }
+        );
+        titleText.setOrigin(0.5, 0.5);
 
         // this is the button, png files were not working for some reason
 
@@ -28,6 +45,7 @@ class TitleMenu extends Phaser.Scene {
 
         const startButton = this.add.zone(x, y, buttonWidth, buttonHeight).setOrigin(0).setInteractive();
         startButton.on('pointerdown', () => {
+            this.toggleScoreDisplay(true); // Show the score
             this.scene.start('Game');
         });
 
