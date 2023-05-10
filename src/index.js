@@ -3,9 +3,9 @@ import Phaser from "Phaser";
 import Game from "./scenes/Game.js";
 import GameOver from "./scenes/GameOver.js";
 import TitleMenu from "./scenes/TitleMenu.js";
+import GameCredits from './scenes/GameCredits.js';
 
 import "./assets/scss/index.scss";
-// import GameCredits from './scenes/GameCredits.js'
 
 const config = {
   width: 640,
@@ -24,7 +24,7 @@ const config = {
       },
     },
   },
-  scene: [TitleMenu, Game, GameOver],
+  scene: [TitleMenu, Game, GameOver, GameCredits],
 };
 
 new Phaser.Game(config);
