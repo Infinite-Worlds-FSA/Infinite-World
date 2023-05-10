@@ -28,8 +28,8 @@ class Game extends Phaser.Scene {
     this.load.image("tiles", "./assets/tiles.png");
     this.load.atlas(
       "atlas",
-      "./assets/mario-atlas.png",
-      "./assets/mario-atlas.json"
+      "./assets/sprite-atlas.png",
+      "./assets/sprite-atlas.json"
     );
 
     // Load all map files
