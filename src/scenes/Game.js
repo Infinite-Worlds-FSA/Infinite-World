@@ -17,7 +17,7 @@ class Game extends Phaser.Scene {
     if (data && data.levelKey) {
       this.levelKey = data.levelKey;
     }
-}
+  }
 
   // Tileset by https://www.deviantart.com/thecrushedjoycon/art/Super-Mario-Bros-Mega-Tileset-Ver-2-842092790
   // Goombas are from https://mfgg.net/index.php?act=resdb&param=02&c=1&id=4200
@@ -42,7 +42,13 @@ class Game extends Phaser.Scene {
     this.scene.start("Game", { levelKey: "map3" });
   }
 
+  showScore() {
+    const scoreElement = document.querySelector('.score');
+    scoreElement.classList.remove('score-hidden');
+  }
+
   create() {
+    this.showScore();
     const noCollisionTiles = [tiles.EMPTY, tiles.FLAG_LEFT];
 
     this.map = this.make.tilemap({ key: this.levelKey });
