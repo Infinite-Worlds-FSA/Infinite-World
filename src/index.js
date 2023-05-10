@@ -3,6 +3,7 @@ import Phaser from 'Phaser'
 
 import Game from './scenes/Game.js'
 import GameOver from './scenes/GameOver.js'
+import TitleMenu from './scenes/TitleMenu.js'
 
 import './assets/scss/index.scss'
 
@@ -24,6 +25,7 @@ const config = {
         }
     },
     scene: [
+        TitleMenu,
         Game,
         GameOver
     ]
