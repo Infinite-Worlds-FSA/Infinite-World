@@ -14,7 +14,7 @@ Infinite Worlds is a JavaScript game developed by our team. It utilizes the Phas
 
 To install and run Infinite Worlds on your local machine, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/infinite-worlds.git`
+1. Clone the repository: `git clone https://github.com/your-username/infinite-worlds.git](https://github.com/Infinite-Worlds-FSA/Infinite-Worlds.git`
 2. Navigate to the project directory: `cd infinite-worlds`
 3. Install the dependencies: `npm install`
 4. Start the local development server: `npm start`
