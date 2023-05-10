@@ -11,7 +11,7 @@ class Game extends Phaser.Scene {
   constructor() {
     super("Game");
     this.levelKey = "map";
-    this.mapKeys = ["map", "map2", "map3", "map11"]; // Array of map keys
+    this.mapKeys = ["map", "map2", "map3", "map4", "map11"]; // Array of map keys
   }
 
   init(data) {
@@ -50,8 +50,8 @@ class Game extends Phaser.Scene {
   }
 
   showScore() {
-    const scoreElement = document.querySelector('.score');
-    scoreElement.classList.remove('score-hidden');
+    const scoreElement = document.querySelector(".score");
+    scoreElement.classList.remove("score-hidden");
   }
 
   create() {
