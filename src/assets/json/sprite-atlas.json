@@ -1,7 +1,7 @@
 {
     "frames": [
         {
-            "filename": "mario-atlas_0",
+            "filename": "sprite-atlas_0",
             "frame": {
                 "x": 0,
                 "y": 0,
@@ -14,7 +14,7 @@
             }
         },
         {
-            "filename": "mario-atlas_1",
+            "filename": "sprite-atlas_1",
             "frame": {
                 "x": 16,
                 "y": 0,
@@ -27,7 +27,7 @@
             }
         },
         {
-            "filename": "mario-atlas_2",
+            "filename": "sprite-atlas_2",
             "frame": {
                 "x": 32,
                 "y": 0,
@@ -40,7 +40,7 @@
             }
         },
         {
-            "filename": "mario-atlas_3",
+            "filename": "sprite-atlas_3",
             "frame": {
                 "x": 48,
                 "y": 0,
@@ -53,7 +53,7 @@
             }
         },
         {
-            "filename": "mario-atlas_4",
+            "filename": "sprite-atlas_4",
             "frame": {
                 "x": 64,
                 "y": 0,
@@ -66,7 +66,7 @@
             }
         },
         {
-            "filename": "mario-atlas_5",
+            "filename": "sprite-atlas_5",
             "frame": {
                 "x": 80,
                 "y": 0,
@@ -79,7 +79,7 @@
             }
         },
         {
-            "filename": "mario-atlas_6",
+            "filename": "sprite-atlas_6",
             "frame": {
                 "x": 0,
                 "y": 16,
@@ -92,7 +92,7 @@
             }
         },
         {
-            "filename": "mario-atlas_7",
+            "filename": "sprite-atlas_7",
             "frame": {
                 "x": 16,
                 "y": 16,
@@ -105,7 +105,7 @@
             }
         },
         {
-            "filename": "mario-atlas_8",
+            "filename": "sprite-atlas_8",
             "frame": {
                 "x": 32,
                 "y": 16,
@@ -118,7 +118,7 @@
             }
         },
         {
-            "filename": "mario-atlas_9",
+            "filename": "sprite-atlas_9",
             "frame": {
                 "x": 48,
                 "y": 16,
@@ -131,7 +131,7 @@
             }
         },
         {
-            "filename": "mario-atlas_10",
+            "filename": "sprite-atlas_10",
             "frame": {
                 "x": 64,
                 "y": 16,
@@ -144,7 +144,7 @@
             }
         },
         {
-            "filename": "mario-atlas_11",
+            "filename": "sprite-atlas_11",
             "frame": {
                 "x": 80,
                 "y": 16,
@@ -157,7 +157,7 @@
             }
         },
         {
-            "filename": "mario-atlas_12",
+            "filename": "sprite-atlas_12",
             "frame": {
                 "x": 0,
                 "y": 32,
@@ -170,7 +170,7 @@
             }
         },
         {
-            "filename": "mario-atlas_13",
+            "filename": "sprite-atlas_13",
             "frame": {
                 "x": 16,
                 "y": 32,
@@ -183,7 +183,7 @@
             }
         },
         {
-            "filename": "mario-atlas_14",
+            "filename": "sprite-atlas_14",
             "frame": {
                 "x": 32,
                 "y": 32,
@@ -196,7 +196,7 @@
             }
         },
         {
-            "filename": "mario-atlas_15",
+            "filename": "sprite-atlas_15",
             "frame": {
                 "x": 48,
                 "y": 32,
@@ -209,7 +209,7 @@
             }
         },
         {
-            "filename": "mario-atlas_16",
+            "filename": "sprite-atlas_16",
             "frame": {
                 "x": 64,
                 "y": 32,
@@ -222,7 +222,7 @@
             }
         },
         {
-            "filename": "mario-atlas_17",
+            "filename": "sprite-atlas_17",
             "frame": {
                 "x": 80,
                 "y": 32,

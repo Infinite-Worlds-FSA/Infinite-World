@@ -11,7 +11,7 @@ import './assets/scss/index.scss'
 const config = {
     width: 640,
     height: 480,
-    parent: 'mario',
+    parent: 'sprite',
     backgroundColor: '#FFFFAC',
     title: 'Tilemap',
     url: 'webtips.dev',
