@@ -40,6 +40,10 @@ class GameOver extends Phaser.Scene {
     this.input.on("pointerdown", () => {
       this.scene.start("Game", { levelKey: this.scene.levelKey });
     });
+
+    this.time.delayedCall(4000, () => { // timer that will start the credits scene after 4 seconds
+      this.scene.start('GameCredits');
+    });
   }
 }
 
