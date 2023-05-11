@@ -1,9 +1,9 @@
-import Phaser from "Phaser";
+import Phaser from "phaser";
 
 import Game from "./scenes/Game.js";
 import GameOver from "./scenes/GameOver.js";
 import TitleMenu from "./scenes/TitleMenu.js";
-import GameCredits from './scenes/GameCredits.js';
+import GameCredits from "./scenes/GameCredits.js";
 
 import "./assets/scss/index.scss";
 

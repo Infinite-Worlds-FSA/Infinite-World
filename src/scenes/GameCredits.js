@@ -4,19 +4,22 @@ class GameCredits extends Phaser.Scene {
   }
 
   create() {
+    this.cameras.main.resetFX();
+    this.cameras.main.setBackgroundColor(0x000000);
+
     const creditText = this.add.text(
-        this.cameras.main.width / 2,
-        this.cameras.main.height / 4,
-      "Infinite Worlds was created by, Jason Rouge, Hussein Aligabi, Vincent Bridger, and Abraham Flores",
-      { font: '25px Sans-serif', fill: 'black', wordWrap: { width: 450 } }
+      this.cameras.main.width / 2,
+      this.cameras.main.height / 4,
+      "Infinite Worlds was created by\nJason Ruge\nHussein Aligabi\nVincent Bridger\nAbraham Flores",
+      { font: '32px "Press Start 2P"', fill: "#ffffff", align: "center" }
     );
     creditText.setOrigin(0.5, 0.5);
 
     const thankYouText = this.add.text(
-        this.cameras.main.width / 2,
-        this.cameras.main.height / 2,
+      this.cameras.main.width / 2,
+      this.cameras.main.height / 2,
       "Thank you for playing!",
-      { font: '25px Sans-serif', fill: 'black' }
+      { font: '32px "Press Start 2P"', fill: "#ffffff", align: "center" }
     );
     thankYouText.setOrigin(0.5, 0.5);
   }
