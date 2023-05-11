@@ -18,7 +18,7 @@ To install and run Infinite Worlds on your local machine, follow these steps:
 2. Navigate to the project directory: `cd infinite-worlds`
 3. Install the dependencies: `npm install`
 4. Start the local development server: `npm start`
-5. Open your web browser and visit: `http://localhost:3000`
+5. Open your web browser and visit: `http://localhost:1234`
 
 ## Usage
 
