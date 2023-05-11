@@ -23,11 +23,11 @@ class TitleMenu extends Phaser.Scene {
             this.cameras.main.width / 2,
             this.cameras.main.height / 4,
             'Welcome to Infinite Worlds',
-            { font: '25px Sans-serif', fill: 'black' }
+            { font: '25px staatliches', fill: 'black' }
         );
         titleText.setOrigin(0.5, 0.5);
 
-        // this is the button, png files were not working for some reason
+        // this is the button, png files were not working for some reason, so this is a rectangle instead with text inside
 
         const buttonWidth = 200;
         const buttonHeight = 50;
@@ -38,7 +38,7 @@ class TitleMenu extends Phaser.Scene {
         buttonGraphics.fillRect(x, y, buttonWidth, buttonHeight);
 
         const buttonText = this.add.text(x + buttonWidth / 2, y + buttonHeight / 2, 'Start Game', {
-            font: '20px Sans-serif',
+            font: '25px staatliches',
             fill: 'black',
         });
         buttonText.setOrigin(0.5, 0.5);

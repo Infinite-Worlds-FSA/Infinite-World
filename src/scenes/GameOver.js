@@ -25,7 +25,7 @@ class GameOver extends Phaser.Scene {
       this.game.config.width / 2,
       this.game.config.height / 2 - 50,
       "GAME OVER!",
-      { fontSize: "32px", fill: "#fff" }
+      { font: "32px staatliches", fill: "#fff" }
     );
     gameOverText.setOrigin(0.5);
 
@@ -33,7 +33,7 @@ class GameOver extends Phaser.Scene {
       this.game.config.width / 2,
       this.game.config.height / 2 + 50,
       "Restart Level? Click the screen",
-      { fontSize: "24px", fill: "#fff" }
+      { font: "24px staatliches", fill: "#fff" }
     );
     restartText.setOrigin(0.5);
 
