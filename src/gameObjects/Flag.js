@@ -14,7 +14,7 @@ class Flag {
       flagRoot.collisionCallback = null; // Set to null to make sure the callback only runs once
 
       // More configuration options can be found on https://rexrainbow.github.io/phaser3-rex-notes/docs/site/particles/
-      const particles = scene.add.particles("atlas", "mario-atlas_13");
+      const particles = scene.add.particles("atlas", "sprite-atlas_13");
       const emitter = particles.createEmitter({
         x: flagObject.x,
         y: flagObject.y - flagObject.height,
