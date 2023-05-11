@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "node scripts/start.js"
+        "start": "node scripts/start.js",
+        "build": "parcel build index.html"
     },
     "keywords": [],
     "author": "",
@@ -13,7 +14,7 @@
         "phaser": "3.52.0"
     },
     "devDependencies": {
-        "parcel-bundler": "1.12.4",
+        "parcel-bundler": "^1.12.4",
         "sass": "1.32.5"
     }
 }
