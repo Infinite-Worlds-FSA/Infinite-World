@@ -10,7 +10,7 @@ class Game extends Phaser.Scene {
   constructor() {
     super("Game");
     this.levelKey = "map";
-    this.mapKeys = ["map", "map2", "map3", "map4", "map5", "map11"]; // Array of map keys
+    this.mapKeys = ["map", "map2", "map3", "map4", "map5", "map11"];
   }
 
   init(data) {
@@ -32,7 +32,6 @@ class Game extends Phaser.Scene {
     //   "../assets/json/zombie-idle.json"
     // );
 
-    // Load all map files
     for (const mapKey of this.mapKeys) {
       this.load.tilemapTiledJSON(mapKey, `./assets/${mapKey}.json`);
     }
