@@ -4,7 +4,7 @@ class TitleMenu extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('start-button', 'src/assets/img/start-button.png')
+        this.load.image('title_menu_background', 'src/assets/img/title_menu_background.png'); //background image not loading for some reason
     }
 
     toggleScoreDisplay(visible){
@@ -17,13 +17,15 @@ class TitleMenu extends Phaser.Scene {
     }
 
     create() {
+        this.add.image(0,0, 'title_menu_background').setOrigin(0,0).setDisplaySize(this.cameras.main.width, this.cameras.main.height);
+
         this.toggleScoreDisplay(false);
 
         const titleText = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 4,
-            'Welcome to Infinite Worlds',
-            { font: '25px staatliches', fill: 'black' }
+            'Welcome to\nInfinite Worlds',
+            { font: '40px staatliches', fill: 'white', align: 'center' }
         );
         titleText.setOrigin(0.5, 0.5);
 
@@ -32,7 +34,7 @@ class TitleMenu extends Phaser.Scene {
         const buttonWidth = 200;
         const buttonHeight = 50;
         const x = this.cameras.main.width / 2 - buttonWidth / 2;
-        const y = this.cameras.main.height / 2 - buttonHeight / 2;
+        const y = this.cameras.main.height / 2 - buttonHeight / 2 + 100;
 
         const buttonGraphics = this.add.graphics({ fillStyle: { color: 0xFF0000 } }); 
         buttonGraphics.fillRect(x, y, buttonWidth, buttonHeight);
