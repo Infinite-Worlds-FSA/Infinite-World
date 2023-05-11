@@ -1,18 +1,3 @@
-// class GameOver extends Phaser.Scene {
-
-//     constructor () {
-//         super('GameOver');
-//     }
-
-//     create() {
-//         this.cameras.main.setBackgroundColor('#000');
-
-//         document.getElementsByClassName('game-over')[0].classList.add('visible');
-//     }
-// }
-
-// export default GameOver;
-
 class GameOver extends Phaser.Scene {
   constructor() {
     super("GameOver");
@@ -41,8 +26,8 @@ class GameOver extends Phaser.Scene {
       this.scene.start("Game", { levelKey: this.scene.levelKey });
     });
 
-    this.time.delayedCall(4000, () => { // timer that will start the credits scene after 4 seconds
-      this.scene.start('GameCredits');
+    this.time.delayedCall(4000, () => {
+      this.scene.start("GameCredits");
     });
   }
 }
