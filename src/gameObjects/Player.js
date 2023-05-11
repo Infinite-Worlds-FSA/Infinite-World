@@ -8,6 +8,9 @@ class Player {
         this.sprite = scene.physics.add.sprite(x, y, 'atlas')
             .setScale(2);
 
+        // this.sprite2 = scene.physics.add.sprite(x, y, "idleAtlas").setScale(2);
+
+
         this.sprite.setCollideWorldBounds(true);
         this.sprite.isDed = false;
 
@@ -53,7 +56,10 @@ class Player {
         } else {
             this.sprite.setVelocityX(0);
             this.sprite.body.onFloor() &&
-            !this.sprite.isDed && this.sprite.play('idle', true);
+            !this.sprite.isDed && this.sprite.play("idle", true);
+            // this.sprite2.setVelocityX(0);
+            // this.sprite2.body.onFloor() &&
+            // !this.sprite2.isDed && this.sprite2.play('idle', true);
         }
 
         if ((input.space.isDown && this.sprite.body.onFloor())) {

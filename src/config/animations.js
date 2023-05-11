@@ -13,6 +13,19 @@ export default scene => {
         repeat: -1
     });
 
+    // scene.anims.create({
+    //   key: "idle",
+    //   frames: scene.anims.generateFrameNames("idleAtlas", {
+    //     prefix: "zombie ",
+    //     start: 0,
+    //     end: 4,
+    //     zeroPad: 1,
+    //     suffix: '.aseprite'
+    //   }),
+    //   frameRate: 10,
+    //   repeat: -1,
+    // });
+
     scene.anims.create({
         key: 'idle',
         frames: [{ key: 'atlas', frame: 'sprite-atlas_0' }],

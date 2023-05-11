@@ -31,6 +31,11 @@ class Game extends Phaser.Scene {
       "./assets/sprite-atlas.png",
       "./assets/sprite-atlas.json"
     );
+    // this.load.atlas(
+    //   "idleAtlas",
+    //   "../assets/img/zombiepng.png",
+    //   "../assets/json/zombie-idle.json"
+    // );
 
     // Load all map files
     for (const mapKey of this.mapKeys) {
