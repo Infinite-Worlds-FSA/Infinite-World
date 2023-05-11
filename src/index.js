@@ -18,7 +18,6 @@ const config = {
   physics: {
     default: "arcade",
     arcade: {
-      // debug: true, // Set it to true if you want debugger enabled by default
       gravity: {
         y: 1000,
       },

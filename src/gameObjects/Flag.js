@@ -1,8 +1,8 @@
 class Flag {
   constructor(scene) {
     const flagObject = scene.map.getObjectLayer("flag").objects[0];
-    const flagCoordinates = scene.tileset.texCoordinates[962]; // 962 is the tile index in tiled for the flag
-    const flagRoot = scene.platform.getTileAt(75, 23); // Get the root of the flag with tile pos
+    const flagCoordinates = scene.tileset.texCoordinates[962];
+    const flagRoot = scene.platform.getTileAt(75, 23);
 
     this.scene = scene;
     this.sprite = scene.add
@@ -11,9 +11,8 @@ class Flag {
       .setTilePosition(flagCoordinates.x, flagCoordinates.y);
 
     flagRoot.setCollisionCallback(() => {
-      flagRoot.collisionCallback = null; // Set to null to make sure the callback only runs once
+      flagRoot.collisionCallback = null;
 
-      // More configuration options can be found on https://rexrainbow.github.io/phaser3-rex-notes/docs/site/particles/
       const particles = scene.add.particles("atlas", "sprite-atlas_13");
       const emitter = particles.createEmitter({
         x: flagObject.x,
@@ -32,7 +31,7 @@ class Flag {
         duration: 800,
         onComplete: () => {
           emitter.stop();
-          this.scene.loadNewLevel(); // Call loadNewLevel method to switch to the new level
+          this.scene.loadNewLevel();
         },
       });
 
