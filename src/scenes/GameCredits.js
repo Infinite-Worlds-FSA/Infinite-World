@@ -11,7 +11,7 @@ class GameCredits extends Phaser.Scene {
       this.cameras.main.width / 2,
       this.cameras.main.height / 4,
       "Infinite Worlds was created by\nJason Ruge\nHussein Aligabi\nVincent Bridger\nAbraham Flores",
-      { font: '32px "Press Start 2P"', fill: "#ffffff", align: "center" }
+      { font: '32px staatliches', fill: "#ffffff", align: "center" }
     );
     creditText.setOrigin(0.5, 0.5);
 
@@ -19,7 +19,7 @@ class GameCredits extends Phaser.Scene {
       this.cameras.main.width / 2,
       this.cameras.main.height / 2,
       "Thank you for playing!",
-      { font: '32px "Press Start 2P"', fill: "#ffffff", align: "center" }
+      { font: '32px staatliches', fill: "#ffffff", align: "center" }
     );
     thankYouText.setOrigin(0.5, 0.5);
   }
