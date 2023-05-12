@@ -88,6 +88,24 @@ export default (scene) => {
     hideOnComplete: true,
   });
 
+  // scene.anims.create({
+  //   key: "goombaRun",
+  //   frames: scene.anims.generateFrameNames("enemy", {
+  //     prefix: "sprite-0002-sheet_",
+  //     start: 0,
+  //     end: 4,
+  //   }),
+  //   frameRate: 15,
+  //   repeat: -1,
+  // });
+
+  // scene.anims.create({
+  //   key: "goombaDie",
+  //   frames: [{ key: "enemy", frame: "sprite-0002-sheet_1" }],
+  //   frameRate: 10,
+  //   hideOnComplete: true,
+  // });
+
   // Coin
   scene.anims.create({
     key: "rotate",

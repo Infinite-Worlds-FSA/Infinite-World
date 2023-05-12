@@ -45,7 +45,12 @@ class Game extends Phaser.Scene {
     const currentIndex = this.mapKeys.indexOf(this.levelKey);
     const nextIndex = (currentIndex + 1) % this.mapKeys.length;
     const nextLevelKey = this.mapKeys[nextIndex];
-    this.scene.start("Game", { levelKey: nextLevelKey });
+
+    if (this.levelKey === "map11") {
+      this.scene.start("GameCredits");
+    } else {
+      this.scene.start("Game", { levelKey: nextLevelKey });
+    }
   }
 
   showScore() {
