@@ -10,19 +10,6 @@ export default (scene) => {
     repeat: -1,
   });
 
-  // scene.anims.create({
-  //   key: "idle",
-  //   frames: scene.anims.generateFrameNames("idleAtlas", {
-  //     prefix: "zombie ",
-  //     start: 0,
-  //     end: 4,
-  //     zeroPad: 1,
-  //     suffix: '.aseprite'
-  //   }),
-  //   frameRate: 10,
-  //   repeat: -1,
-  // });
-
   scene.anims.create({
     key: "idle",
     frames: [{ key: "atlas", frame: "sprite-atlas_0" }],
@@ -40,6 +27,47 @@ export default (scene) => {
     frames: [{ key: "atlas", frame: "sprite-atlas_5" }],
     frameRate: 10,
   });
+
+  // scene.anims.create({
+  //   key: "idle",
+  //   frames: scene.anims.generateFrameNames("zombie", {
+  //     prefix: "zombie ",
+  //     start: 0,
+  //     end: 4,
+  //     zeroPad: 1,
+  //   }),
+  //   frameRate: 10,
+  //   repeat: -1,
+  // });
+  // scene.anims.create({
+  //   key: "run",
+  //   frames: scene.anims.generateFrameNames("zombie", {
+  //     prefix: "zombie ",
+  //     start: 5,
+  //     end: 8,
+  //     zeroPad: 1,
+  //   }),
+  //   frameRate: 10,
+  //   repeat: -1,
+  // });
+
+  // scene.anims.create({
+  //   key: "jump",
+  //   frames: [{ key: "zombie", frame: "zombie_9" }],
+  //   frameRate: 10,
+  // });
+
+  // scene.anims.create({
+  //   key: "die",
+  //   frames: scene.anims.generateFrameNames("zombie", {
+  //     prefix: "zombie ",
+  //     start: 10,
+  //     end: 11,
+  //     zeroPad: 1,
+  //   }),
+  //   frameRate: 10,
+  //   repeat: -1,
+  // });
 
   // Goomba
   scene.anims.create({

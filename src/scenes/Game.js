@@ -10,7 +10,7 @@ class Game extends Phaser.Scene {
   constructor() {
     super("Game");
     this.levelKey = "map";
-    this.mapKeys = ["map", "map2", "map3", "map4", "map5", "map11"];
+    this.mapKeys = ["map", "map2", "map3", "map4", "map11"];
   }
 
   init(data) {
@@ -26,10 +26,10 @@ class Game extends Phaser.Scene {
       "./assets/sprite-atlas.png",
       "./assets/sprite-atlas.json"
     );
-    // this.load.atlas(
-    //   "idleAtlas",
-    //   "../assets/img/zombiepng.png",
-    //   "../assets/json/zombie-idle.json"
+    // this.load.spritesheet(
+    //   "zombie",
+    //   "../assets/img/zombie.png",
+    //   "../assets/json/zombie.json"
     // );
 
     for (const mapKey of this.mapKeys) {
