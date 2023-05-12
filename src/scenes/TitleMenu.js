@@ -3,10 +3,6 @@ class TitleMenu extends Phaser.Scene {
     super("TitleMenu");
   }
 
-    // preload() {
-    //     this.load.image('title_menu_background', 'src/assets/img/title_menu_background1.jpg'); //background image not loading for some reason
-    // }
-
   toggleScoreDisplay(visible) {
     const scoreElement = document.querySelector(".score");
     if (visible) {
@@ -18,7 +14,6 @@ class TitleMenu extends Phaser.Scene {
 
 
     create() {
-        // let background = this.add.image(0,0, 'title_menu_background').setOrigin(0,0).setDisplaySize(this.cameras.main.width, this.cameras.main.height);
         const spaceBackground = this.add.graphics({ fillStyle: { color: 0x1a113c } }); // 0x663399 is a dark purple, if the other purple is too dark
         spaceBackground.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height);
 
