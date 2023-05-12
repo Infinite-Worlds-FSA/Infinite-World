@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "PORT=1234 node scripts/start.js",
+    "start": "node scripts/start.js",
     "build": "parcel build index.html"
   },
   "keywords": [],
