@@ -3,6 +3,15 @@ class GameCredits extends Phaser.Scene {
         super("GameCredits");
     }
 
+    toggleScoreDisplay(visible) {
+        const scoreElement = document.querySelector(".score");
+        if (visible) {
+          scoreElement.classList.remove("score-hidden");
+        } else {
+          scoreElement.classList.add("score-hidden");
+        }
+      }
+
     create() {
         const spaceBackground = this.add.graphics({ fillStyle: { color: 0x1a113c } }); // 0x663399 is a dark purple, if the other purple is too dark
         spaceBackground.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height);
@@ -14,6 +23,8 @@ class GameCredits extends Phaser.Scene {
             const radius = Math.random() * 2;
             starsOverlay.fillCircle(x, y, radius);
         };
+
+        this.toggleScoreDisplay(false);
 
         this.cameras.main.resetFX();
 
