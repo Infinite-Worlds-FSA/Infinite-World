@@ -3,9 +3,9 @@ class TitleMenu extends Phaser.Scene {
     super("TitleMenu");
   }
 
-    preload() {
-        this.load.image('title_menu_background', 'src/assets/img/title_menu_background.png'); //background image not loading for some reason
-    }
+    // preload() {
+    //     this.load.image('title_menu_background', 'src/assets/img/title_menu_background1.jpg'); //background image not loading for some reason
+    // }
 
   toggleScoreDisplay(visible) {
     const scoreElement = document.querySelector(".score");
@@ -18,7 +18,17 @@ class TitleMenu extends Phaser.Scene {
 
 
     create() {
-        this.add.image(0,0, 'title_menu_background').setOrigin(0,0).setDisplaySize(this.cameras.main.width, this.cameras.main.height);
+        // let background = this.add.image(0,0, 'title_menu_background').setOrigin(0,0).setDisplaySize(this.cameras.main.width, this.cameras.main.height);
+        const spaceBackground = this.add.graphics({ fillStyle: { color: 0x1a113c } }); // 0x663399 is a dark purple, if the other purple is too dark
+        spaceBackground.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height);
+
+        const starsOverlay = this.add.graphics({ fillStyle: { color: 0xffffff } });
+        for (let i = 0; i < 200; i++){ // adjusting this number will change the number of stars
+            const x = Math.random() * this.cameras.main.width;
+            const y = Math.random() * this.cameras.main.height;
+            const radius = Math.random() * 2;
+            starsOverlay.fillCircle(x, y, radius);
+        };
 
         this.toggleScoreDisplay(false);
 
@@ -26,10 +36,9 @@ class TitleMenu extends Phaser.Scene {
             this.cameras.main.width / 2,
             this.cameras.main.height / 4,
             'Welcome to\nInfinite Worlds',
-            { font: '40px staatliches', fill: 'white', align: 'center' }
+            { font: '80px staatliches', fill: '#FFD408', align: 'center' }
         );
-        titleText.setOrigin(0.5, 0.5);
-
+        titleText.setOrigin(0.5, 0.2);
 
         const buttonWidth = 200;
         const buttonHeight = 50;
