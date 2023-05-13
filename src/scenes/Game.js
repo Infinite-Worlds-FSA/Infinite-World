@@ -34,8 +34,15 @@ class Game extends Phaser.Scene {
         frameHeight: 16,
       }
     );
-    const frameNames = this.textures.get("goomba").getFrameNames();
-    console.log('Line 38 frameNames',  frameNames);
+    this.load.spritesheet(
+      "zombie",
+      './assets/Zombie2-sheet.png',
+      {
+        frameWidth: 16,
+        frameHeight: 16,
+      }
+    );
+    
 
     for (const mapKey of this.mapKeys) {
       this.load.tilemapTiledJSON(mapKey, `./assets/${mapKey}.json`);
