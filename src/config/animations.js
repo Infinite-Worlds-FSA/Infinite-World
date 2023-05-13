@@ -48,7 +48,7 @@ export default (scene) => {
       start: 0,
       end: 4,
     }),
-    frameRate: 15,
+    frameRate: 10,
     repeat: -1,
   });
 
@@ -58,8 +58,8 @@ export default (scene) => {
       start: 5,
       end: 6,
     }),
-    frameRate: 15,
-    repeat: -1,
+    frameRate: 10,
+    // repeat: -1,
   });
 
   // Coin

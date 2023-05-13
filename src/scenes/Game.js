@@ -28,12 +28,14 @@ class Game extends Phaser.Scene {
     );
     this.load.spritesheet(
       "goomba",
-      "./assets/Sprite-0002-sheet.png, ..",
+      "./assets/Sprite-0002-sheet.png",
       {
-        frameWidth: 112,
+        frameWidth: 16,
         frameHeight: 16,
       }
     );
+    const frameNames = this.textures.get("goomba").getFrameNames();
+    console.log('Line 38 frameNames',  frameNames);
 
     for (const mapKey of this.mapKeys) {
       this.load.tilemapTiledJSON(mapKey, `./assets/${mapKey}.json`);
