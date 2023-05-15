@@ -10,7 +10,7 @@ class Game extends Phaser.Scene {
   constructor() {
     super("Game");
     this.levelKey = "map";
-    this.mapKeys = ["map", "map2", "map3", "map4", "map5", "map11"];
+    this.mapKeys = ["map", "map2", "map3", "map4", "map11"];
   }
 
   init(data) {
