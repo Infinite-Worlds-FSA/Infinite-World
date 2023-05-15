@@ -4,6 +4,7 @@ import Game from "./scenes/Game.js";
 import GameOver from "./scenes/GameOver.js";
 import TitleMenu from "./scenes/TitleMenu.js";
 import GameCredits from "./scenes/GameCredits.js";
+import Controls from "./scenes/Controls.js";
 
 import "./assets/scss/index.scss";
 
@@ -23,7 +24,7 @@ const config = {
       },
     },
   },
-  scene: [TitleMenu, Game, GameOver, GameCredits],
+  scene: [TitleMenu, Controls, Game, GameOver, GameCredits],
 };
 
 new Phaser.Game(config);

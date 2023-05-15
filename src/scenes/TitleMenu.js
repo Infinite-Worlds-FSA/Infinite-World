@@ -64,7 +64,7 @@ class TitleMenu extends Phaser.Scene {
       .setInteractive();
     startButton.on("pointerdown", () => {
       this.toggleScoreDisplay(true);
-      this.scene.start("Game");
+      this.scene.start("Controls"); //changed this from 'Game' to 'Controls', can change back if needed to exclude controls screen
     });
 
     startButton.on("pointerover", () => {
