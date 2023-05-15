@@ -4,8 +4,7 @@ class Player {
 
     this.scene = scene;
 
-    this.sprite = scene.physics.add.sprite(x, y, "atlas").setScale(2);
-    // this.sprite = scene.physics.add.sprite(x, y, "zombie").setScale(2);
+    this.sprite = scene.physics.add.sprite(x, y, "zombie").setScale(2);
 
     this.sprite.setCollideWorldBounds(true);
     this.sprite.isDed = false;

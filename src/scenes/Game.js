@@ -10,7 +10,7 @@ class Game extends Phaser.Scene {
   constructor() {
     super("Game");
     this.levelKey = "map";
-    this.mapKeys = ["map", "map2", "map3", "map4", "map11"];
+    this.mapKeys = ["map", "map2", "map3", "map4", "map5", "map11"];
   }
 
   init(data) {
@@ -26,11 +26,14 @@ class Game extends Phaser.Scene {
       "./assets/sprite-atlas.png",
       "./assets/sprite-atlas.json"
     );
-    // this.load.spritesheet(
-    //   "zombie",
-    //   "../assets/img/zombie.png",
-    //   "../assets/json/zombie.json"
-    // );
+    this.load.spritesheet("goomba", "./assets/Sprite-0002-sheet.png", {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+    this.load.spritesheet("zombie", "./assets/Zombie2-sheet.png", {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
 
     for (const mapKey of this.mapKeys) {
       this.load.tilemapTiledJSON(mapKey, `./assets/${mapKey}.json`);
@@ -45,12 +48,7 @@ class Game extends Phaser.Scene {
     const currentIndex = this.mapKeys.indexOf(this.levelKey);
     const nextIndex = (currentIndex + 1) % this.mapKeys.length;
     const nextLevelKey = this.mapKeys[nextIndex];
-
-    if (this.levelKey === "map11") {
-      this.scene.start("GameCredits");
-    } else {
-      this.scene.start("Game", { levelKey: nextLevelKey });
-    }
+    this.scene.start("Game", { levelKey: nextLevelKey });
   }
 
   showScore() {

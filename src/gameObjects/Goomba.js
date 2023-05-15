@@ -16,7 +16,7 @@ class Goomba {
 
     for (const goomba of goombaObjects) {
       this.goombas
-        .create(goomba.x, goomba.y - goomba.height, "atlas")
+        .create(goomba.x, goomba.y - goomba.height, "goomba")
         .setScale(1.5)
         .setOrigin(0)
         .setDepth(-1);
