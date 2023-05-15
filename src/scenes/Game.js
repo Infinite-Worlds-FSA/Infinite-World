@@ -71,12 +71,27 @@ class Game extends Phaser.Scene {
     this.map.createLayer("background", this.tileset, 0, 0);
     this.platform.setCollisionByExclusion(noCollisionTiles, true);
 
-    this.player = new Player(this, 25, 400).collideWith(this.platform);
+    this.player = new Player(this, 25, 400, 3).collideWith(this.platform);
     this.goombas = new Goomba(this).collideWith(this.platform);
     this.coins = new Coin(this).collideWith(this.player.sprite);
     this.flag = new Flag(this);
 
     this.inputs = this.input.keyboard.createCursorKeys();
+
+    this.livesText = this.add.text(20, 20, `Lives: ${this.player.livesCount}`, {
+      fontSize: "21px staatliches",
+      fill: "#FFD408",
+    });
+
+    // this.gameOverText = this.add.text(
+    //   this.cameras.main.width / 2,
+    //   this.cameras.main.height / 2,
+    //   "Game Over",
+    //   {
+    //     fontSize: "32px staatliches",
+    //     fill: "#ff0000",
+    //   }
+    // )
   }
 
   update() {

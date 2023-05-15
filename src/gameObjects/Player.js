@@ -1,8 +1,12 @@
 class Player {
-  constructor(scene, x, y) {
+  constructor(scene, x, y, livesCount) {
     const useDeadZone = false;
 
     this.scene = scene;
+    this.livesCount = livesCount;
+    this.isDed = false;
+
+    this.gameOverScene = scene.scene.get("GameOver");
 
     this.sprite = scene.physics.add.sprite(x, y, "zombie").setScale(2);
 
@@ -72,12 +76,34 @@ class Player {
     }
   }
 
+  loseLife() {
+    this.livesCount--;
+    if(this.livesCount <= 0) {
+      this.isDed = true;
+      this.sprite.setCollideWorldBounds(false);
+      this.gameOverScene.scene.start("GameOver");
+    }
+  }
+
   die() {
     this.sprite.isDed = true;
     this.sprite.setVelocity(0, -350);
     this.sprite.play("die", true);
     this.sprite.setCollideWorldBounds(false);
+    this.loseLife();
   }
+  // showGameOverMessage() {
+  //   const gameOverText = this.scene.add.text(
+  //     this.scene.game.config.width / 2,
+  //     this.scene.game.config.height / 2,
+  //     "GAME OVER",
+  //     {
+  //       fontSize: "64px Courier",
+  //       fill: "#FFD408",
+  //     }
+  //   );
+  //   gameOverText.setOrigin(0.5, 0.5);
+  // }
 }
 
 export default Player;

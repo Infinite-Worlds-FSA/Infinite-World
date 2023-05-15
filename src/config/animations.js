@@ -32,28 +32,7 @@ export default (scene) => {
       end: 11,
     }),
     frameRate: 10,
-    //  repeat: -1,
   });
-
-  //                        this can be removed if everyone is happy with zombie character
-  // scene.anims.create({
-  //   key: "idle",
-  //   frames: [{ key: "atlas", frame: "sprite-atlas_0" }],
-  //   frameRate: 10,
-  // });
-
-  // scene.anims.create({
-  //   key: "jump",
-  //   frames: [{ key: "zombie", frame: "sprite-atlas_4" }],
-  //   frameRate: 10,
-  // });
-
-  // scene.anims.create({
-  //   key: "die",
-  //   frames: [{ key: "atlas", frame: "sprite-atlas_5" }],
-  //   frameRate: 10,
-  // });
-  //                        this can be removed if everyone is happy with zombie character
 
   // Goomba
   scene.anims.create({
@@ -73,7 +52,6 @@ export default (scene) => {
       end: 6,
     }),
     frameRate: 10,
-    // repeat: -1,
   });
 
   // Coin
