@@ -3,14 +3,34 @@ class GameOver extends Phaser.Scene {
     super("GameOver");
   }
 
+  toggleScoreDisplay(visible) {
+    const scoreElement = document.querySelector(".score");
+    if (visible) {
+      scoreElement.classList.remove("score-hidden");
+    } else {
+      scoreElement.classList.add("score-hidden");
+    }
+  }
+
   create() {
-    this.cameras.main.setBackgroundColor("#000");
+    const spaceBackground = this.add.graphics({ fillStyle: { color: 0x1a113c } }); // 0x663399 is a dark purple, if the other purple is too dark
+    spaceBackground.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height);
+
+    const starsOverlay = this.add.graphics({ fillStyle: { color: 0xffffff } });
+    for (let i = 0; i < 200; i++) { // adjusting this number will change the number of stars
+      const x = Math.random() * this.cameras.main.width;
+      const y = Math.random() * this.cameras.main.height;
+      const radius = Math.random() * 2;
+      starsOverlay.fillCircle(x, y, radius);
+    };
+
+    this.toggleScoreDisplay(false);
 
     const gameOverText = this.add.text(
       this.game.config.width / 2,
       this.game.config.height / 2 - 50,
       "GAME OVER!",
-      { font: "32px staatliches", fill: "#fff" }
+      { font: "32px staatliches", fill: "#FFD408" }
     );
     gameOverText.setOrigin(0.5);
 
@@ -18,7 +38,7 @@ class GameOver extends Phaser.Scene {
       this.game.config.width / 2,
       this.game.config.height / 2 + 50,
       "Restart Level? Click the screen",
-      { font: "24px staatliches", fill: "#fff" }
+      { font: "24px staatliches", fill: "#FFD408" }
     );
     restartText.setOrigin(0.5);
 

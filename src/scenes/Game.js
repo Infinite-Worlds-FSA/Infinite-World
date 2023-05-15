@@ -26,23 +26,14 @@ class Game extends Phaser.Scene {
       "./assets/sprite-atlas.png",
       "./assets/sprite-atlas.json"
     );
-    this.load.spritesheet(
-      "goomba",
-      "./assets/Sprite-0002-sheet.png",
-      {
-        frameWidth: 16,
-        frameHeight: 16,
-      }
-    );
-    this.load.spritesheet(
-      "zombie",
-      './assets/Zombie2-sheet.png',
-      {
-        frameWidth: 16,
-        frameHeight: 16,
-      }
-    );
-    
+    this.load.spritesheet("goomba", "./assets/Sprite-0002-sheet.png", {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+    this.load.spritesheet("zombie", "./assets/Zombie2-sheet.png", {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
 
     for (const mapKey of this.mapKeys) {
       this.load.tilemapTiledJSON(mapKey, `./assets/${mapKey}.json`);

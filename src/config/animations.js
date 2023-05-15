@@ -54,7 +54,7 @@ export default (scene) => {
   //   frameRate: 10,
   // });
   //                        this can be removed if everyone is happy with zombie character
-  
+
   // Goomba
   scene.anims.create({
     key: "goombaRun",
