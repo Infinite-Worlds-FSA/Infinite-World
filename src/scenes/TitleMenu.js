@@ -100,8 +100,6 @@ class TitleMenu extends Phaser.Scene {
 
     loadAudio();
 
-    // this.input.once("pointerdown", loadAudio);
-    // this.input.keyboard.once("keydown", loadAudio);
     this.scene.get("Controls").events.once("start", () => {
       if (this.homeAudio) {
         this.homeAudio.stop();
