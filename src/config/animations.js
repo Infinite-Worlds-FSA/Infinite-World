@@ -5,7 +5,7 @@ export default (scene) => {
       start: 0,
       end: 4,
     }),
-    frameRate: 10,
+    frameRate: 3,
     repeat: -1,
   });
 
