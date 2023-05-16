@@ -16,6 +16,10 @@ class Coin {
     }
   }
 
+  preload() {
+    this.load.audio("home", "./assets/home.mp3");
+  }
+
   collideWith(gameObject) {
     this.scene.physics.add.overlap(
       this.coins,

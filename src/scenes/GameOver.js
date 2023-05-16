@@ -24,7 +24,7 @@ class GameOver extends Phaser.Scene {
   create() {
     const spaceBackground = this.add.graphics({
       fillStyle: { color: 0x1a113c },
-    }); // 0x663399 is a dark purple, if the other purple is too dark
+    });
     spaceBackground.fillRect(
       0,
       0,
@@ -34,11 +34,11 @@ class GameOver extends Phaser.Scene {
 
     const starsOverlay = this.add.graphics({ fillStyle: { color: 0xffffff } });
     for (let i = 0; i < 200; i++) {
-      // adjusting this number will change the number of stars
       const x = Math.random() * this.cameras.main.width;
       const y = Math.random() * this.cameras.main.height;
       const radius = Math.random() * 2;
       starsOverlay.fillCircle(x, y, radius);
+    }
     }
 
     this.toggleScoreDisplay(false);

@@ -34,7 +34,6 @@ class GameCredits extends Phaser.Scene {
 
     const starsOverlay = this.add.graphics({ fillStyle: { color: 0xffffff } });
     for (let i = 0; i < 200; i++) {
-      // adjusting this number will change the number of stars
       const x = Math.random() * this.cameras.main.width;
       const y = Math.random() * this.cameras.main.height;
       const radius = Math.random() * 2;

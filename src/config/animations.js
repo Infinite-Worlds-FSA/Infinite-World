@@ -34,7 +34,6 @@ export default (scene) => {
     frameRate: 10,
   });
 
-  // Goomba
   scene.anims.create({
     key: "goombaRun",
     frames: scene.anims.generateFrameNames("goomba", {
@@ -54,7 +53,6 @@ export default (scene) => {
     frameRate: 10,
   });
 
-  // Coin
   scene.anims.create({
     key: "rotate",
     frames: scene.anims.generateFrameNames("atlas", {
