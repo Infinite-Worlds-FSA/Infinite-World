@@ -3,14 +3,13 @@ class Controls extends Phaser.Scene {
     super("Controls");
   }
 
+
   toggleScoreDisplay(visible) {
     const scoreElement = document.querySelector(".score");
     if (visible) {
       scoreElement.classList.remove("score-hidden");
     } else {
       scoreElement.classList.add("score-hidden");
-    }
-  }
 
   create() {
     const spaceBackground = this.add.graphics({
@@ -41,12 +40,12 @@ class Controls extends Phaser.Scene {
         );
         title.setOrigin(0.5, 1.0);
 
-        //spacebar
+        
         const outerBox = this.add.graphics({ fillStyle: { color: 0xaaaaaa } });
         const outerBoxWidth = 200;
         const outerBoxHeight = 50;
         const outerBoxX = this.cameras.main.width / 2 - outerBoxWidth / 2;
-        const outerBoxY = this.cameras.main.height * 7 / 8 - outerBoxHeight / 2; // this moves the position of the box up and down
+        const outerBoxY = this.cameras.main.height * 7 / 8 - outerBoxHeight / 2; 
         outerBox.fillRect(outerBoxX, outerBoxY, outerBoxWidth, outerBoxHeight);
 
         const innerBox = this.add.graphics({ fillStyle: { color: 0x777777 } });
@@ -57,11 +56,11 @@ class Controls extends Phaser.Scene {
         const innerBoxY = outerBoxY + padding;
         innerBox.fillRect(innerBoxX, innerBoxY, innerBoxWidth, innerBoxHeight);
 
-        // Left & Right Keys
+     
         const keyWidth = 100;
         const keyHeight = 100;
         const keyPadding = 10;
-        const centerY = this.cameras.main.height * 9 / 16; // this moves the position of both arrows up and down
+        const centerY = this.cameras.main.height * 9 / 16; 
         const centerXLeft = this.cameras.main.width / 3;
         const centerXRight = this.cameras.main.width * 2 / 3;
 
@@ -122,5 +121,6 @@ class Controls extends Phaser.Scene {
         });
     };
 };
+
 
 export default Controls;
