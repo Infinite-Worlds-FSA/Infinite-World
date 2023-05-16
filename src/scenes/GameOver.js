@@ -12,19 +12,37 @@ class GameOver extends Phaser.Scene {
     }
   }
 
+  toggleLivesDisplay(visible) {
+    const livesElement = document.querySelector(".lives");
+    if (visible) {
+      livesElement.classList.remove("lives-hidden");
+    } else {
+      livesElement.classList.add("lives-hidden");
+    }
+  }
+
   create() {
-    const spaceBackground = this.add.graphics({ fillStyle: { color: 0x1a113c } }); // 0x663399 is a dark purple, if the other purple is too dark
-    spaceBackground.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height);
+    const spaceBackground = this.add.graphics({
+      fillStyle: { color: 0x1a113c },
+    }); // 0x663399 is a dark purple, if the other purple is too dark
+    spaceBackground.fillRect(
+      0,
+      0,
+      this.cameras.main.width,
+      this.cameras.main.height
+    );
 
     const starsOverlay = this.add.graphics({ fillStyle: { color: 0xffffff } });
-    for (let i = 0; i < 200; i++) { // adjusting this number will change the number of stars
+    for (let i = 0; i < 200; i++) {
+      // adjusting this number will change the number of stars
       const x = Math.random() * this.cameras.main.width;
       const y = Math.random() * this.cameras.main.height;
       const radius = Math.random() * 2;
       starsOverlay.fillCircle(x, y, radius);
-    };
+    }
 
     this.toggleScoreDisplay(false);
+    this.toggleLivesDisplay(false);
 
     const gameOverText = this.add.text(
       this.game.config.width / 2,

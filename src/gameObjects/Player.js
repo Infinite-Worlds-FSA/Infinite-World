@@ -1,9 +1,9 @@
 class Player {
-  constructor(scene, x, y, livesCount) {
+  constructor(scene, x, y,) {
     const useDeadZone = false;
 
     this.scene = scene;
-    this.livesCount = livesCount;
+    this.livesCount = 3;
     this.isDed = false;
 
     this.gameOverScene = scene.scene.get("GameOver");
@@ -75,27 +75,31 @@ class Player {
       this.sprite.play("jump", true);
     }
   }
+  resetPosition() {
+    this.sprite.setPosition(25, 400);
+  }
+
+  enableInput() {
+    this.scene.input.keyboard.enabled = true;
+  }
 
   loseLife() {
-    this.livesCount--;
-    if(this.livesCount <= 0) {
-      this.isDed = true;
-      this.sprite.setCollideWorldBounds(false);
-      this.gameOverScene.scene.start("GameOver");
+       this.livesCount--;
+    if (this.livesCount === 0) {
+      
+      return;
     }
+    const livesElement = document.querySelector(".num-lives");
+    livesElement.textContent = this.livesCount.toString();
   }
 
   die() {
     this.sprite.isDed = true;
-    this.sprite.setVelocity(0, -350);
     this.sprite.play("die", true);
+    this.sprite.setVelocity(0, -350);
     this.sprite.setCollideWorldBounds(false);
-    this.scene.input.keyboard.shutdown();
-    this.scene.physics.world.removeCollider(this.scene.player.collider);
-    this.scene.physics.world.removeCollider(this.collider);
     this.loseLife();
   }
-
 }
 
 export default Player;
