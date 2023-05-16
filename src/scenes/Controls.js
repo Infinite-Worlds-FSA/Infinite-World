@@ -10,6 +10,7 @@ class Controls extends Phaser.Scene {
       scoreElement.classList.remove("score-hidden");
     } else {
       scoreElement.classList.add("score-hidden");
+    }};
 
   create() {
     const spaceBackground = this.add.graphics({
