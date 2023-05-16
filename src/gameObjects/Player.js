@@ -90,20 +90,12 @@ class Player {
     this.sprite.setVelocity(0, -350);
     this.sprite.play("die", true);
     this.sprite.setCollideWorldBounds(false);
+    this.scene.input.keyboard.shutdown();
+    this.scene.physics.world.removeCollider(this.scene.player.collider);
+    this.scene.physics.world.removeCollider(this.collider);
     this.loseLife();
   }
-  // showGameOverMessage() {
-  //   const gameOverText = this.scene.add.text(
-  //     this.scene.game.config.width / 2,
-  //     this.scene.game.config.height / 2,
-  //     "GAME OVER",
-  //     {
-  //       fontSize: "64px Courier",
-  //       fill: "#FFD408",
-  //     }
-  //   );
-  //   gameOverText.setOrigin(0.5, 0.5);
-  // }
+
 }
 
 export default Player;

@@ -7,7 +7,7 @@ class Goomba {
     this.collider = this.scene.physics.add.collider(
       this.scene.player.sprite,
       this.goombas,
-      this.gameOver,
+      this.handlePlayerGoombaCollision,
       null,
       this
     );
@@ -54,37 +54,30 @@ class Goomba {
     }
   }
 
-  gameOver() {
+  handlePlayerGoombaCollision(playerSprite, goomba) {
     if (this.scene.player.sprite.body.touching.down) {
-      this.die();
-
-      return;
+      this.scene.player.die();
+    } else {
+      for (const goomba of this.goombas.children.entries) {
+        if (goomba.body.touching.up) {
+          this.die(goomba);
+        }
+      }
+      setTimeout(() => {
+        this.scene.scene.start("GameOver");
+      }, 1500);
     }
-
-    this.scene.player.die();
-    this.scene.input.keyboard.shutdown();
-
-    this.scene.physics.world.removeCollider(this.scene.player.collider);
-    this.scene.physics.world.removeCollider(this.collider);
-
-    setTimeout(() => {
-      this.scene.scene.start("GameOver");
-    }, 1500);
   }
 
-  die() {
-    for (const goomba of this.goombas.children.entries) {
-      if (goomba.body.touching.up) {
-        goomba.isDed = true;
-        goomba.play("goombaDie", true);
-        goomba.on("animationcomplete", () => goomba.destroy());
+  die(goomba) {
+    goomba.isDed = true;
+    goomba.play("goombaDie", true);
+    goomba.on("animationcomplete", () => goomba.destroy());
 
-        increaseScore(0.5);
+    increaseScore(0.5);
 
-        this.scene.player.sprite.setVelocity(0, -350);
-        this.scene.player.sprite.play("jump");
-      }
-    }
+    this.scene.player.sprite.setVelocity(0, -350);
+    this.scene.player.sprite.play("jump");
   }
 }
 
