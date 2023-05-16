@@ -127,7 +127,7 @@ class Controls extends Phaser.Scene {
         );
         loadingText.setOrigin(0, 0);
 
-        this.time.delayedCall(6000, () => {
+        this.time.delayedCall(3000, () => {
             this.scene.start("Game");
         });
     };

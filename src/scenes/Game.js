@@ -3,6 +3,7 @@ import Goomba from "../gameObjects/Goomba";
 import Coin from "../gameObjects/Coin";
 import Flag from "../gameObjects/Flag";
 
+
 import tiles from "../config/tiles";
 import generateAnimations from "../config/animations";
 

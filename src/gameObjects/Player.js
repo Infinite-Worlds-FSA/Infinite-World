@@ -1,10 +1,14 @@
+import decreaseLife from "../ui/decreaseLife";
+
 class Player {
-  constructor(scene, x, y,) {
+    static livesCount = 3;
+    constructor(scene, x, y) {
     const useDeadZone = false;
 
     this.scene = scene;
-    this.livesCount = 3;
+
     this.isDed = false;
+    this.decreaseLifeHandler = new decreaseLife();
 
     this.gameOverScene = scene.scene.get("GameOver");
 
@@ -75,22 +79,22 @@ class Player {
       this.sprite.play("jump", true);
     }
   }
-  resetPosition() {
-    this.sprite.setPosition(25, 400);
-  }
-
-  enableInput() {
-    this.scene.input.keyboard.enabled = true;
-  }
+  
 
   loseLife() {
-       this.livesCount--;
-    if (this.livesCount === 0) {
+    Player.livesCount--;
+    console.log('Line 86',Player.livesCount);
+    if(Player.livesCount === 0) {
+      setTimeout(() => {
+        this.scene.scene.start("GameOver");
+      }, 2000);
       
-      return;
     }
-    const livesElement = document.querySelector(".num-lives");
-    livesElement.textContent = this.livesCount.toString();
+    
+    this.decreaseLifeHandler.decreaseLife();
+    setTimeout(() => {
+      this.scene.scene.restart();
+    }, 2000);
   }
 
   die() {
@@ -98,6 +102,7 @@ class Player {
     this.sprite.play("die", true);
     this.sprite.setVelocity(0, -350);
     this.sprite.setCollideWorldBounds(false);
+
     this.loseLife();
   }
 }

@@ -39,7 +39,6 @@ class GameOver extends Phaser.Scene {
       const radius = Math.random() * 2;
       starsOverlay.fillCircle(x, y, radius);
     }
-    }
 
     this.toggleScoreDisplay(false);
     this.toggleLivesDisplay(false);
