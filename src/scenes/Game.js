@@ -11,6 +11,7 @@ class Game extends Phaser.Scene {
     super("Game");
     this.levelKey = "map";
     this.mapKeys = ["map", "map2", "map3", "map4", "map11"];
+    this.gametheme = null;
   }
 
   init(data) {
@@ -34,6 +35,7 @@ class Game extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     });
+    this.load.audio("gametheme", "./assets/gametheme.mp3");
 
     for (const mapKey of this.mapKeys) {
       this.load.tilemapTiledJSON(mapKey, `./assets/${mapKey}.json`);
@@ -49,6 +51,7 @@ class Game extends Phaser.Scene {
     const nextIndex = (currentIndex + 1) % this.mapKeys.length;
     const nextLevelKey = this.mapKeys[nextIndex];
     if (this.levelKey === "map11") {
+      this.gametheme.stop();
       this.scene.start("GameCredits");
     } else {
       this.scene.start("Game", { levelKey: nextLevelKey });
@@ -77,6 +80,15 @@ class Game extends Phaser.Scene {
     this.flag = new Flag(this);
 
     this.inputs = this.input.keyboard.createCursorKeys();
+
+    const loadAudio = () => {
+      if (!this.gametheme || !this.gametheme.isPlaying) {
+        this.gametheme = this.sound.add("gametheme", { loop: true });
+        this.gametheme.play();
+      }
+    };
+    this.input.once("pointerdown", loadAudio);
+    this.input.keyboard.once("keydown", loadAudio);
   }
 
   update() {
