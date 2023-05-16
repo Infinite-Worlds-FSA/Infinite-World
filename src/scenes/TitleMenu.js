@@ -73,7 +73,11 @@ class TitleMenu extends Phaser.Scene {
       .setInteractive();
     startButton.on("pointerdown", () => {
       this.toggleScoreDisplay(true);
-      this.homeAudio.stop();
+      if (this.homeAudio) {
+        this.homeAudio.stop();
+        this.homeAudio.destroy();
+        this.homeAudio = null;
+      }
       this.scene.start("Controls");
     });
 
@@ -88,22 +92,30 @@ class TitleMenu extends Phaser.Scene {
     this.inputs = this.input.keyboard.createCursorKeys();
 
     const loadAudio = () => {
-      this.homeAudio = this.sound.add("home", { loop: true });
-      this.homeAudio.play();
+      if (!this.homeAudio) {
+        this.homeAudio = this.sound.add("home", { loop: true });
+        this.homeAudio.play();
+      }
     };
 
     loadAudio();
 
-    this.input.once("pointerdown", loadAudio);
-    this.input.keyboard.once("keydown", loadAudio);
+    // this.input.once("pointerdown", loadAudio);
+    // this.input.keyboard.once("keydown", loadAudio);
     this.scene.get("Controls").events.once("start", () => {
-      this.homeAudio.stop();
+      if (this.homeAudio) {
+        this.homeAudio.stop();
+        this.homeAudio.destroy();
+        this.homeAudio = null;
+      }
     });
   }
 
   shutdown() {
     if (this.homeAudio) {
       this.homeAudio.stop();
+      this.homeAudio.destroy();
+      this.homeAudio = null;
     }
   }
 }
