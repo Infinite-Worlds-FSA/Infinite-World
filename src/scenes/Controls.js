@@ -72,8 +72,8 @@ class Controls extends Phaser.Scene {
         const keyHeight = 100;
         const keyPadding = 10;
         const centerY = this.cameras.main.height * 9 / 16; 
-        const centerXLeft = this.cameras.main.width / 3;
-        const centerXRight = this.cameras.main.width * 2 / 3;
+        const centerXLeft = this.cameras.main.width * 2 / 3;
+        const centerXRight = this.cameras.main.width / 3;
 
         const outerLeftKey = this.add.graphics({ fillStyle: { color: 0xaaaaaa } });
         outerLeftKey.fillTriangle(
