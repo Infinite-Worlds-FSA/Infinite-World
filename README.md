@@ -1,4 +1,12 @@
-# Infinite Worlds
+<div align="center">
+  <img rel="icon" href="./src/assets/img/favicon.ico" alt="Infinite Worlds Logo" width="200px">
+</div>
+
+# <span style="color:#FFD700">Infinite Worlds</span>
+
+<div align="center">
+  <img src="Infinite-Worlds.gif" alt="Infinite Worlds Gameplay" width="500px">
+</div>
 
 Infinite Worlds is a JavaScript game developed by our team. It utilizes the Phaser framework to create an immersive retro-style 2D gaming experience.
 
@@ -10,17 +18,17 @@ Infinite Worlds is a JavaScript game developed by our team. It utilizes the Phas
 - [Contributing](#contributing)
 - [License](#license)
 
-## Installation
+## <span style="color:#FFD700">Installation</span>
 
 To install and run Infinite Worlds on your local machine, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/infinite-worlds.git](https://github.com/Infinite-Worlds-FSA/Infinite-Worlds.git`
+1. Clone the repository: `git clone https://github.com/your-username/infinite-worlds.git`
 2. Navigate to the project directory: `cd infinite-worlds`
 3. Install the dependencies: `npm install`
 4. Start the local development server: `npm start`
 5. Open your web browser and visit: `http://localhost:1234`
 
-## Usage
+## <span style="color:#FFD700">Usage</span>
 
 Once you have the game up and running, you can use the following controls to play:
 
@@ -30,7 +38,7 @@ Once you have the game up and running, you can use the following controls to pla
 
 The objective of Infinite Worlds is to navigate through various levels, defeat enemies, collect power-ups, and reach the final goal.
 
-## Features
+## <span style="color:#FFD700">Features</span>
 
 Infinite Worlds offers the following features:
 
@@ -39,10 +47,10 @@ Infinite Worlds offers the following features:
 - Dynamic enemy AI and behavior
 - Collectible power-ups and bonuses
 - High scores leaderboard
-- Responsive controls for smooth gameplay experience
+- Responsive controls for a smooth gameplay experience
 - Engaging sound effects and background music
 
-## Contributing
+## <span style="color:#FFD700">Contributing</span>
 
 We welcome contributions from the community to enhance Infinite Worlds. If you're interested in contributing, please follow these steps:
 
@@ -54,7 +62,6 @@ We welcome contributions from the community to enhance Infinite Worlds. If you'r
 
 Please ensure that you adhere to our [code of conduct](CONTRIBUTING.md) while contributing.
 
-## License
+## <span style="color:#FFD700">License</span>
 
 Infinite Worlds is released under the [MIT License](LICENSE). You are free to use, modify, and distribute this project for personal or commercial purposes.
-
