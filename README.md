@@ -1,8 +1,4 @@
-<div align="center">
-  <img src="favicon.ico" alt="Infinite Worlds Logo" width="200px">
-</div>
-
-# <span style="color:#FFD700">Infinite Worlds</span>
+# Infinite Worlds
 
 Infinite Worlds is a JavaScript game developed by our team. It utilizes the Phaser framework to create an immersive retro-style 2D gaming experience.
 
@@ -14,17 +10,17 @@ Infinite Worlds is a JavaScript game developed by our team. It utilizes the Phas
 - [Contributing](#contributing)
 - [License](#license)
 
-## <span style="color:#FFD700">Installation</span>
+## Installation
 
 To install and run Infinite Worlds on your local machine, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/infinite-worlds.git`
+1. Clone the repository: `git clone https://github.com/your-username/infinite-worlds.git](https://github.com/Infinite-Worlds-FSA/Infinite-Worlds.git`
 2. Navigate to the project directory: `cd infinite-worlds`
 3. Install the dependencies: `npm install`
 4. Start the local development server: `npm start`
 5. Open your web browser and visit: `http://localhost:1234`
 
-## <span style="color:#FFD700">Usage</span>
+## Usage
 
 Once you have the game up and running, you can use the following controls to play:
 
@@ -34,7 +30,7 @@ Once you have the game up and running, you can use the following controls to pla
 
 The objective of Infinite Worlds is to navigate through various levels, defeat enemies, collect power-ups, and reach the final goal.
 
-## <span style="color:#FFD700">Features</span>
+## Features
 
 Infinite Worlds offers the following features:
 
@@ -46,7 +42,7 @@ Infinite Worlds offers the following features:
 - Responsive controls for smooth gameplay experience
 - Engaging sound effects and background music
 
-## <span style="color:#FFD700">Contributing</span>
+## Contributing
 
 We welcome contributions from the community to enhance Infinite Worlds. If you're interested in contributing, please follow these steps:
 
@@ -58,6 +54,6 @@ We welcome contributions from the community to enhance Infinite Worlds. If you'r
 
 Please ensure that you adhere to our [code of conduct](CONTRIBUTING.md) while contributing.
 
-## <span style="color:#FFD700">License</span>
+## License
 
 Infinite Worlds is released under the [MIT License](LICENSE). You are free to use, modify, and distribute this project for personal or commercial purposes.
