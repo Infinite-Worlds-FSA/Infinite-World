@@ -1,7 +1,3 @@
-<div align="center">
-  <img rel="icon" href="./src/assets/img/favicon.ico" alt="Infinite Worlds Logo" width="200px">
-</div>
-
 # <span style="color:#FFD700">Infinite Worlds</span>
 
 <div align="center">
