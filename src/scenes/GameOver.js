@@ -12,6 +12,15 @@ class GameOver extends Phaser.Scene {
     }
   }
 
+  toggleLivesDisplay(visible) {
+    const livesElement = document.querySelector(".lives");
+    if (visible) {
+      livesElement.classList.remove("lives-hidden");
+    } else {
+      livesElement.classList.add("lives-hidden");
+    }
+  }
+
   create() {
     const spaceBackground = this.add.graphics({
       fillStyle: { color: 0x1a113c },
@@ -32,26 +41,15 @@ class GameOver extends Phaser.Scene {
     }
 
     this.toggleScoreDisplay(false);
+    this.toggleLivesDisplay(false);
 
     const gameOverText = this.add.text(
       this.game.config.width / 2,
       this.game.config.height / 2 - 50,
-      "GAME OVER!",
-      { font: "32px staatliches", fill: "#FFD408" }
+      "GAME \nOVER!",
+      { font: "128px staatliches", fill: "#FFD408" }
     );
     gameOverText.setOrigin(0.5);
-
-    const restartText = this.add.text(
-      this.game.config.width / 2,
-      this.game.config.height / 2 + 50,
-      "Restart Level? Click the screen",
-      { font: "24px staatliches", fill: "#FFD408" }
-    );
-    restartText.setOrigin(0.5);
-
-    this.input.on("pointerdown", () => {
-      this.scene.start("Game", { levelKey: this.scene.levelKey });
-    });
 
     this.time.delayedCall(4000, () => {
       this.scene.start("GameCredits");

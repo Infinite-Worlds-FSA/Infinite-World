@@ -1,13 +1,15 @@
 import increaseScore from "../ui/increaseScore";
+import decreaseLife from "../ui/decreaseLife";
 
 class Goomba {
-  constructor(scene) {
+  constructor(scene, player) {
     this.scene = scene;
+    this.player = player;
     this.goombas = this.scene.physics.add.group();
     this.collider = this.scene.physics.add.collider(
       this.scene.player.sprite,
       this.goombas,
-      this.gameOver,
+      this.handlePlayerGoombaCollision,
       null,
       this
     );
@@ -54,22 +56,19 @@ class Goomba {
     }
   }
 
-  gameOver() {
+  handlePlayerGoombaCollision() {
     if (this.scene.player.sprite.body.touching.down) {
       this.die();
-
       return;
     }
-
     this.scene.player.die();
+   
     this.scene.input.keyboard.shutdown();
 
     this.scene.physics.world.removeCollider(this.scene.player.collider);
     this.scene.physics.world.removeCollider(this.collider);
 
-    setTimeout(() => {
-      this.scene.scene.start("GameOver");
-    }, 1500);
+    
   }
 
   die() {

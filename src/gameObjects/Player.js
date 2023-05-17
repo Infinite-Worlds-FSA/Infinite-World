@@ -1,8 +1,17 @@
+import decreaseLife from "../ui/decreaseLife";
+
 class Player {
-  constructor(scene, x, y) {
+    static livesCount = 3;
+    
+    constructor(scene, x, y) {
     const useDeadZone = false;
 
     this.scene = scene;
+
+    this.isDed = false;
+    this.decreaseLifeHandler = new decreaseLife();
+
+    this.gameOverScene = scene.scene.get("GameOver");
 
     this.sprite = scene.physics.add.sprite(x, y, "zombie").setScale(2);
 
@@ -71,12 +80,31 @@ class Player {
       this.sprite.play("jump", true);
     }
   }
+  
+
+  loseLife() {
+    Player.livesCount--;
+    console.log('Line 86',Player.livesCount);
+    if(Player.livesCount === 0) {
+      setTimeout(() => {
+        this.scene.scene.start("GameOver");
+      }, 2000);
+      
+    }
+    
+    this.decreaseLifeHandler.decreaseLife();
+    setTimeout(() => {
+      this.scene.scene.restart();
+    }, 2000);
+  }
 
   die() {
     this.sprite.isDed = true;
-    this.sprite.setVelocity(0, -350);
     this.sprite.play("die", true);
+    this.sprite.setVelocity(0, -350);
     this.sprite.setCollideWorldBounds(false);
+
+    this.loseLife();
   }
 }
 

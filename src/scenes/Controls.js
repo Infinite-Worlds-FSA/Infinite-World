@@ -12,10 +12,19 @@ class Controls extends Phaser.Scene {
       scoreElement.classList.add("score-hidden");
     }};
 
+  toggleLivesDisplay(visible) {
+    const livesElement = document.querySelector(".lives");
+    if (visible) {
+      livesElement.classList.remove("lives-hidden");
+    } else {
+      livesElement.classList.add("lives-hidden");
+    }
+  }
+
   create() {
     const spaceBackground = this.add.graphics({
       fillStyle: { color: 0x1a113c },
-    });
+    }); // 0x663399 is a dark purple, if the other purple is too dark
     spaceBackground.fillRect(
       0,
       0,
@@ -31,15 +40,16 @@ class Controls extends Phaser.Scene {
       starsOverlay.fillCircle(x, y, radius);
     }
 
-        this.toggleScoreDisplay(false);
+    this.toggleScoreDisplay(false);
+    this.toggleLivesDisplay(false);
 
-        const title = this.add.text(
-            this.cameras.main.width / 2,
-            this.cameras.main.height / 4,
-            "Controls",
-            { font: "80px staatliches", fill: "#FFD408", align: "center" }
-        );
-        title.setOrigin(0.5, 1.0);
+    const title = this.add.text(
+      this.cameras.main.width / 2,
+      this.cameras.main.height / 4,
+      "Controls",
+      { font: "80px staatliches", fill: "#FFD408", align: "center" }
+    );
+    title.setOrigin(0.5, 1.0);
 
         
         const outerBox = this.add.graphics({ fillStyle: { color: 0xaaaaaa } });
@@ -117,7 +127,7 @@ class Controls extends Phaser.Scene {
         );
         loadingText.setOrigin(0, 0);
 
-        this.time.delayedCall(6000, () => {
+        this.time.delayedCall(3000, () => {
             this.scene.start("Game");
         });
     };

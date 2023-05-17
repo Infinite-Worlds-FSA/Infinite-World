@@ -12,10 +12,19 @@ class GameCredits extends Phaser.Scene {
     }
   }
 
+  toggleLivesDisplay(visible) {
+    const livesElement = document.querySelector(".lives");
+    if (visible) {
+      livesElement.classList.remove("lives-hidden");
+    } else {
+      livesElement.classList.add("lives-hidden");
+    }
+  }
+
   create() {
     const spaceBackground = this.add.graphics({
       fillStyle: { color: 0x1a113c },
-    });
+    }); // 0x663399 is a dark purple, if the other purple is too dark
     spaceBackground.fillRect(
       0,
       0,
@@ -32,6 +41,7 @@ class GameCredits extends Phaser.Scene {
     }
 
     this.toggleScoreDisplay(false);
+    this.toggleLivesDisplay(false);
 
     this.cameras.main.resetFX();
 

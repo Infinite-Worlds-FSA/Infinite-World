@@ -3,6 +3,7 @@ import Goomba from "../gameObjects/Goomba";
 import Coin from "../gameObjects/Coin";
 import Flag from "../gameObjects/Flag";
 
+
 import tiles from "../config/tiles";
 import generateAnimations from "../config/animations";
 
@@ -63,8 +64,14 @@ class Game extends Phaser.Scene {
     scoreElement.classList.remove("score-hidden");
   }
 
+  showLives() {
+    const scoreElement = document.querySelector(".lives");
+    scoreElement.classList.remove("lives-hidden");
+  }
+
   create() {
     this.showScore();
+    this.showLives();
     const noCollisionTiles = [tiles.EMPTY, tiles.FLAG_LEFT];
 
     this.map = this.make.tilemap({ key: this.levelKey });
@@ -75,7 +82,7 @@ class Game extends Phaser.Scene {
     this.platform.setCollisionByExclusion(noCollisionTiles, true);
 
     this.player = new Player(this, 25, 400).collideWith(this.platform);
-    this.goombas = new Goomba(this).collideWith(this.platform);
+    this.goombas = new Goomba(this, this.player).collideWith(this.platform);
     this.coins = new Coin(this).collideWith(this.player.sprite);
     this.flag = new Flag(this);
 
