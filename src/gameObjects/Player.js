@@ -2,6 +2,7 @@ import decreaseLife from "../ui/decreaseLife";
 
 class Player {
     static livesCount = 3;
+    
     constructor(scene, x, y) {
     const useDeadZone = false;
 
