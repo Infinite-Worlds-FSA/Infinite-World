@@ -29,7 +29,7 @@ class TitleMenu extends Phaser.Scene {
   create() {
     const spaceBackground = this.add.graphics({
       fillStyle: { color: 0x1a113c },
-    }); // 0x663399 is a dark purple, if the other purple is too dark
+    });
     spaceBackground.fillRect(
       0,
       0,
