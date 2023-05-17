@@ -4,7 +4,7 @@
   <img src="Infinite-Worlds.gif" alt="Infinite Worlds Gameplay" width="500px">
 </div>
 
-Infinite Worlds is a JavaScript game developed by our team. It utilizes the Phaser framework to create an immersive retro-style 2D gaming experience.
+Infinite Worlds is a JavaScript game developed by our team, consisting of [Jason Ruge](https://github.com/jsr09), [Hussein Aligabi](https://github.com/aligabih), [Vincent Bridger](https://github.com/vdaquaro13), and [Abraham Flores](https://github.com/atmcpnk). It utilizes the Phaser framework to create an immersive retro-style 2D gaming experience.
 
 ## Table of Contents
 
